@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Harshita Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://kit.fontawesome.com/1de74e415c.js" crossorigin="anonymous"></script>
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];
+    w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
+    var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+    j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+    f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PZFJQLL3');
+  </script>
+  <!-- End GTM -->
+</head>
+
+<body>
+<!-- GTM noscript -->
+<noscript>
+  <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PZFJQLL3"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+
+<header>
+  <nav>
+    <div class="left">
+      <img src="portfolio_image.png" alt="">
+    </div>
+    <div class="right">
+      <ul>
+        <li><a href="#header">HOME</a></li>
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#project">PROJECTS</a></li>
+        <li><a href="#contact">CONTACT ME</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<main>
+<!-- HOME -->
+<div id="header">
+  <div class="container">
+    <section class="firstsection">
+      <div class="leftsection">
+        Hii.. My name is
+        <span class="stly">Harshita Kumari</span>
+        <div>and I am a passionate</div>
+        <span id="element"></span>
+      </div>
+      <div class="rightsection">
+        <img class="pic" src="pic3.jpg" alt="image" />
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="secondsection" id="about">
+  <div class="container">
+    <div class="row">
+      <div class="about-col-1">
+        <img class="pic" src="pic3.jpg">
+      </div>
+      <div class="about-col-2">
+        <h1 class="sub-title">ABOUT ME</h1>
+        <p>Quick learner and ambitious Computer Science student.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="fourthsection" id="project">
+  <div class="container">
+    <h1 class="sub-title">PROJECTS</h1>
+    <div class="work-list">
+      <div class="work">
+        <img src="tic-tow.jpg">
+        <div class="layer">
+          <h3>Tic Tac Toe</h3>
+          <a href="https://github.com/raj-banka/Tic-Tak-Tow_Game">
+            <i class="fa-solid fa-square-arrow-up-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="fifthsection" id="contact">
+  <div class="container">
+    <div class="row">
+
+      <div class="contact-left">
+        <h1 class="sub-title">CONTACT ME</h1>
+        <p><i class="fa-solid fa-envelope"></i> kumariharshita449@gmail.com</p>
+        <p><i class="fa-solid fa-phone"></i> 9304778338</p>
+
+        <div class="social-icons">
+          <a href="https://www.linkedin.com"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://github.com"><i class="fa-brands fa-github"></i></a>
+        </div>
+      </div>
+
+      <div class="contact-right">
+        <form name="submit-to-google-sheet">
+          <input type="text" name="Name" placeholder="Your Name" required>
+          <input type="email" name="Email" placeholder="Your Email" required>
+          <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+          <button type="submit" class="btn btn2">Submit</button>
+        </form>
+        <span id="msg"></span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="copyright">
+  <p>© harshita</p>
+</div>
+</main>
+
+<!-- Typed JS -->
+<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+<script>
+  new Typed("#element", {
+    strings: ["Web Developer", "Designer", "Video Editor"],
+    typeSpeed: 50
+  });
+</script>
+
+<!-- Google Sheet + GTM -->
+<script>
+const scriptURL = 'https://script.google.com/macros/s/AKfycbxMKdN5yZndzo2K_OCMm7jt6oCRo7LbXefy52lbbW3Xh2yFTnJfmAqhdRCvVHEm_Fbp8w/exec'
+const form = document.forms['submit-to-google-sheet']
+const msg = document.getElementById("msg")
+
+form.addEventListener('submit', e => {
+  e.preventDefault()
+
+  fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+    .then(response => {
+
+      // 🔥 GTM DATA LAYER PUSH
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: "contact_form_submit",
+        form_name: "contact_form",
+        form_location: "contact_section"
+      });
+
+      msg.innerHTML = "Message sent successfully";
+      setTimeout(() => msg.innerHTML = "", 2000);
+      form.reset();
+    })
+    .catch(error => console.error(error))
+})
+</script>
+
+</body>
+</html>
