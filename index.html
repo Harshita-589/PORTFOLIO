@@ -96,7 +96,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                     , <br><h4>Board :</h4>CBSE,2018 <br><h4>Percentage</h4>with 84.4%</li>
                                     <li><span>12th(Higher Secondary)</span><br><br><h4>Institution: </h4>ST.Michael High School
                                          Patna <br><h4>Board :</h4>CBSE,2020 <br><h4>Percentage :</h4>with 71%</li>
-                                    <li><span>B. Tech(CSE)</span><br><br><h4>Institution :</h4> BIT<br><h4>Board :</h4>Sarala Birla
+                                    <li><span>B. Tech(CSE)</span><br><br><h4>Institution :</h4> BIT<br><h4>Board :</h4>
                                         University[2021-25] <br><h4>Percentage :</h4>with 8.4 CGPA till 5th sem</li>
                                 </ul>
                             </div>
@@ -243,25 +243,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <div class="social-icons">
                                 <a href="https://www.linkedin.com/in/raj-banka-4537ba225/"><i
                                         class="fa-brands fa-linkedin"></i></a>
-                                <a href="https://github.com/raj-banka"><i class="fa-brands fa-github"></i></a>
+                                <a href="https://github.com/Harshita-589"><i class="fa-brands fa-github"></i></a>
                                 <a href="https://www.facebook.com/raj.banka.332"><i
                                         class="fa-brands fa-facebook"></i></a>
                                 <a href="https://www.instagram.com/raj_banka__/"><i
                                         class="fa-brands fa-instagram"></i></a>
                             </div>
-                            <a href="Raj_resume.docx" download class="btn btn2">Download CV</a>
+                            <a href="harshita_resume.docx" download class="btn btn2">Download CV</a>
                         </div>
 
-                        <div class="contact-right">
-                            <form name="submit-to-google-sheet">
-                                <input class="capital" type="text" name="Name" placeholder="Your Name" required>
-                                <input class="capital" type="email" name="Email" placeholder="abc@gmail.com" required>
-                                <textarea class="capital" name="Message" rows="6" placeholder="Your Message"
-                                    autocapitalize="#"></textarea>
-                                <button type="submit" class="btn btn2">Submit</button>
-
-                            </form>
-                            <span id="msg"></span>
+                         /span>
 
                         </div>
                     </div>
@@ -269,7 +260,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
         </section>
         <div class="copyright">
-            <p><i class="fa-solid fa-copyright"></i> raj.</p>
+            <p><i class="fa-solid fa-copyright"></i>harshita.</p>
         </div>
 
     </main>
@@ -317,6 +308,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             fetch(scriptURL, { method: 'POST', body: new FormData(form) })
                 .then(response => {
                     msg.innerHTML = "Message sent successfully..."
+                    window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push({
+                    event: "contact_form_submit",
+                    form_name: "contact_form",
+                    form_location: "contact_section"
+                });
                     setTimeout(function () {
                         msg.innerHTML = ""
                     }, 1000)
